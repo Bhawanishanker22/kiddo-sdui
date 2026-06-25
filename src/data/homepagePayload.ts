@@ -1,0 +1,325 @@
+import { SDUIPayload } from '../engine/types';
+
+export const homepagePayload: SDUIPayload = {
+  screen_id: 'HOME_V3',
+  theme: {
+    primary: '#FF9933',
+    secondary: '#1A73E8',
+    background: '#FFF5E6',
+    surface: '#FFFFFF',
+    text_primary: '#1C1C1C',
+    text_secondary: '#6B6B6B',
+    accent: '#FF5733',
+    border_radius: 12,
+  },
+  campaign: {
+    id: 'back_to_school',
+    name: 'Back to School Mega-Sale',
+    theme_override: {
+      primary: '#FFD700',
+      secondary: '#1565C0',
+      background: '#FFFDE7',
+      surface: '#FFFFFF',
+      text_primary: '#0D47A1',
+      text_secondary: '#1565C0',
+      accent: '#FF6F00',
+      border_radius: 8,
+    },
+    overlay: {
+      type: 'FULL_SCREEN_OVERLAY',
+      animation_url: 'https://assets.lottiefiles.com/packages/lf20_x62chJ.json',
+      animation_type: 'lottie',
+    },
+    active: true,
+  },
+  blocks: [
+    {
+      id: 'block_hero_1',
+      type: 'BANNER_HERO',
+      config: {
+        image_url: 'https://images.unsplash.com/photo-1607453998774-d533f65dac99?w=800',
+        title: 'Back to School!',
+        subtitle: 'Up to 40% off on essentials',
+        cta_label: 'Shop Now',
+        badge_text: 'MEGA SALE',
+        action: {
+          type: 'DEEP_LINK',
+          payload: { url: '/category/back-to-school' },
+        },
+      },
+    },
+    {
+      id: 'block_dynamic_1',
+      type: 'DYNAMIC_COLLECTION',
+      config: {
+        title: 'Lunchboxes & Bags',
+        subtitle: 'Campaign picks just for you',
+        theme_tag: 'back_to_school',
+        items: [
+          {
+            id: 'dc_item_1',
+            image_url: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300',
+            label: 'Dino Lunchbox',
+            price: '₹349',
+            original_price: '₹599',
+            badge: 'HOT',
+            action: { type: 'ADD_TO_CART', payload: { id: 'dc_item_1', name: 'Dino Lunchbox', price: 349 } },
+          },
+          {
+            id: 'dc_item_2',
+            image_url: 'https://images.unsplash.com/photo-1577401239170-897942555fb3?w=300',
+            label: 'Unicorn Bag',
+            price: '₹499',
+            original_price: '₹799',
+            badge: 'NEW',
+            action: { type: 'ADD_TO_CART', payload: { id: 'dc_item_2', name: 'Unicorn Bag', price: 499 } },
+          },
+          {
+            id: 'dc_item_3',
+            image_url: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=300',
+            label: 'Space Backpack',
+            price: '₹699',
+            original_price: '₹999',
+            action: { type: 'ADD_TO_CART', payload: { id: 'dc_item_3', name: 'Space Backpack', price: 699 } },
+          },
+          {
+            id: 'dc_item_4',
+            image_url: 'https://images.unsplash.com/photo-1594935975218-f9ac5d8aed49?w=300',
+            label: 'Printed Pencil Case',
+            price: '₹149',
+            original_price: '₹249',
+            action: { type: 'ADD_TO_CART', payload: { id: 'dc_item_4', name: 'Printed Pencil Case', price: 149 } },
+          },
+          {
+            id: 'dc_item_5',
+            image_url: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=300',
+            label: 'Water Bottle',
+            price: '₹199',
+            original_price: '₹349',
+            action: { type: 'ADD_TO_CART', payload: { id: 'dc_item_5', name: 'Water Bottle', price: 199 } },
+          },
+        ],
+      },
+    },
+    {
+      id: 'block_grid_1',
+      type: 'PRODUCT_GRID_2X2',
+      config: {
+        title: 'Top Picks for Kids',
+        items: [
+          {
+            id: 'grid_1',
+            image_url: 'https://images.unsplash.com/photo-1560393464-5c69a73c5770?w=400',
+            name: 'Building Blocks Set',
+            price: '₹799',
+            original_price: '₹1299',
+            rating: 4.8,
+            action: { type: 'ADD_TO_CART', payload: { id: 'grid_1', name: 'Building Blocks Set', price: 799 } },
+          },
+          {
+            id: 'grid_2',
+            image_url: 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=400',
+            name: 'Soft Plush Teddy',
+            price: '₹599',
+            original_price: '₹999',
+            rating: 4.6,
+            action: { type: 'ADD_TO_CART', payload: { id: 'grid_2', name: 'Soft Plush Teddy', price: 599 } },
+          },
+          {
+            id: 'grid_3',
+            image_url: 'https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=400',
+            name: 'Art & Craft Kit',
+            price: '₹449',
+            original_price: '₹699',
+            rating: 4.7,
+            action: { type: 'ADD_TO_CART', payload: { id: 'grid_3', name: 'Art & Craft Kit', price: 449 } },
+          },
+          {
+            id: 'grid_4',
+            image_url: 'https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=400',
+            name: 'Puzzle Games (100pc)',
+            price: '₹349',
+            original_price: '₹549',
+            rating: 4.5,
+            action: { type: 'ADD_TO_CART', payload: { id: 'grid_4', name: 'Puzzle Games', price: 349 } },
+          },
+        ],
+      },
+    },
+    {
+      id: 'block_dynamic_2',
+      type: 'DYNAMIC_COLLECTION',
+      config: {
+        title: 'Snacks under ₹99',
+        subtitle: 'Quick bites, happy kids',
+        theme_tag: 'snacks',
+        items: [
+          {
+            id: 'snack_1',
+            image_url: 'https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=300',
+            label: 'Fruit Gummies',
+            price: '₹49',
+            action: { type: 'ADD_TO_CART', payload: { id: 'snack_1', name: 'Fruit Gummies', price: 49 } },
+          },
+          {
+            id: 'snack_2',
+            image_url: 'https://images.unsplash.com/photo-1506459225024-1428097a7e18?w=300',
+            label: 'Cheese Crackers',
+            price: '₹79',
+            action: { type: 'ADD_TO_CART', payload: { id: 'snack_2', name: 'Cheese Crackers', price: 79 } },
+          },
+          {
+            id: 'snack_3',
+            image_url: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=300',
+            label: 'Ragi Cookies',
+            price: '₹59',
+            action: { type: 'ADD_TO_CART', payload: { id: 'snack_3', name: 'Ragi Cookies', price: 59 } },
+          },
+          {
+            id: 'snack_4',
+            image_url: 'https://images.unsplash.com/photo-1608155686393-8fdd966d784d?w=300',
+            label: 'Mango Bites',
+            price: '₹39',
+            action: { type: 'ADD_TO_CART', payload: { id: 'snack_4', name: 'Mango Bites', price: 39 } },
+          },
+          {
+            id: 'snack_5',
+            image_url: 'https://images.unsplash.com/photo-1571748982800-fa51082c2224?w=300',
+            label: 'Butter Puffs',
+            price: '₹69',
+            action: { type: 'ADD_TO_CART', payload: { id: 'snack_5', name: 'Butter Puffs', price: 69 } },
+          },
+        ],
+      },
+    },
+    // This block should be silently dropped — resilience test
+    {
+      id: 'block_unknown_1',
+      type: 'NEW_COMPONENT_V2',
+      config: {
+        some_future_prop: 'value',
+      },
+    },
+    {
+      id: 'block_hero_2',
+      type: 'BANNER_HERO',
+      config: {
+        image_url: 'https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=800',
+        title: 'Baby Essentials',
+        subtitle: 'Safe, soft, and delivered in 10 mins',
+        cta_label: 'Explore',
+        action: {
+          type: 'DEEP_LINK',
+          payload: { url: '/category/baby-essentials' },
+        },
+      },
+    },
+    {
+      id: 'block_dynamic_3',
+      type: 'DYNAMIC_COLLECTION',
+      config: {
+        title: 'Summer Essentials',
+        subtitle: 'Beat the heat with the best picks',
+        theme_tag: 'summer',
+        items: [
+          {
+            id: 'sum_1',
+            image_url: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=300',
+            label: 'Inflatable Pool',
+            price: '₹1,299',
+            badge: 'TRENDING',
+            action: { type: 'ADD_TO_CART', payload: { id: 'sum_1', name: 'Inflatable Pool', price: 1299 } },
+          },
+          {
+            id: 'sum_2',
+            image_url: 'https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=300',
+            label: 'Sun Hat (Kids)',
+            price: '₹299',
+            action: { type: 'ADD_TO_CART', payload: { id: 'sum_2', name: 'Sun Hat', price: 299 } },
+          },
+          {
+            id: 'sum_3',
+            image_url: 'https://images.unsplash.com/photo-1563293958-29eb169a8f7f?w=300',
+            label: 'Water Guns Set',
+            price: '₹449',
+            action: { type: 'ADD_TO_CART', payload: { id: 'sum_3', name: 'Water Guns Set', price: 449 } },
+          },
+          {
+            id: 'sum_4',
+            image_url: 'https://images.unsplash.com/photo-1481931098730-318b6f776db0?w=300',
+            label: 'Beach Ball Pack',
+            price: '₹199',
+            action: { type: 'ADD_TO_CART', payload: { id: 'sum_4', name: 'Beach Ball Pack', price: 199 } },
+          },
+        ],
+      },
+    },
+  ],
+};
+
+// ── Campaign presets for runtime switching ──────────────────────────────────
+
+export const campaignPresets = {
+  back_to_school: {
+    id: 'back_to_school',
+    name: 'Back to School Mega-Sale',
+    theme_override: {
+      primary: '#FFD700',
+      secondary: '#1565C0',
+      background: '#FFFDE7',
+      surface: '#FFFFFF',
+      text_primary: '#0D47A1',
+      text_secondary: '#1565C0',
+      accent: '#FF6F00',
+      border_radius: 8,
+    },
+    overlay: {
+      type: 'FULL_SCREEN_OVERLAY',
+      animation_url: 'https://assets.lottiefiles.com/packages/lf20_x62chJ.json',
+      animation_type: 'lottie' as const,
+    },
+    active: true,
+  },
+  summer_playhouse: {
+    id: 'summer_playhouse',
+    name: 'Summer Playhouse Festival',
+    theme_override: {
+      primary: '#00B4D8',
+      secondary: '#0077B6',
+      background: '#E0F7FA',
+      surface: '#FFFFFF',
+      text_primary: '#006494',
+      text_secondary: '#0077B6',
+      accent: '#FF6B6B',
+      border_radius: 16,
+    },
+    overlay: {
+      type: 'FULL_SCREEN_OVERLAY',
+      animation_url: 'https://assets.lottiefiles.com/packages/lf20_uwR49r.json',
+      animation_type: 'lottie' as const,
+    },
+    active: false,
+  },
+  mystery_carnival: {
+    id: 'mystery_carnival',
+    name: 'Mystery Gift Carnival',
+    theme_override: {
+      primary: '#E63946',
+      secondary: '#F4A261',
+      background: '#FFF0F0',
+      surface: '#FFFFFF',
+      text_primary: '#9B1D20',
+      text_secondary: '#C1121F',
+      accent: '#FFD60A',
+      border_radius: 20,
+    },
+    overlay: {
+      type: 'FULL_SCREEN_OVERLAY',
+      animation_url: 'https://assets.lottiefiles.com/packages/lf20_ber8WQ.json',
+      animation_type: 'lottie' as const,
+    },
+    active: false,
+  },
+} as const;
+
+export type CampaignId = keyof typeof campaignPresets;
